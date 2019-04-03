@@ -1,0 +1,9 @@
+###> symfony/framework-bundle ###
+.phpunit.result
+/vendor/
+###< symfony/framework-bundle ###
+
+###> phpunit/phpunit ###
+/phpunit.xml
+.phpunit.result.cache
+###< phpunit/phpunit ###
