@@ -80,7 +80,6 @@ class ConfigParser
     {
         $finder = new Finder();
         $finder
-            ->depth('<=1')
             ->files()
             ->in($dirPath)
             ->sortByName()
