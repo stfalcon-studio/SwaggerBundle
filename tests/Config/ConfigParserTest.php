@@ -43,6 +43,10 @@ class ConfigParserTest extends TestCase
                             ],
                         ],
                     ],
+                    'get' => [
+                        'operationId' => 'GetOrderList',
+                        'summary' => 'Get orders list',
+                    ],
                 ],
                 '/users' => [
                     'post' => [
@@ -50,8 +54,8 @@ class ConfigParserTest extends TestCase
                         'summary' => 'Create User',
                         'responses' => [
                             '201' => [
-                                'description' => '201 response'
-                            ]
+                                'description' => '201 response',
+                            ],
                         ],
                     ],
                 ],

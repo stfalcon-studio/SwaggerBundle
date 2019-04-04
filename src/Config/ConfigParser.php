@@ -51,8 +51,7 @@ class ConfigParser
                 $path = $this->configFolder.$nestedPath;
 
                 if (\is_dir($path)) {
-                    $config[$key] = [];
-                    $config[$key] += $this->parseDir($path);
+                    $config[$key] = $this->parseDir($path);
                 } else if(\is_file($path)) {
                     $config[$key] = $this->parseFile($path);
                 } else {
@@ -81,6 +80,7 @@ class ConfigParser
     {
         $finder = new Finder();
         $finder
+            ->depth('<=1')
             ->files()
             ->in($dirPath)
             ->sortByName()
@@ -90,7 +90,7 @@ class ConfigParser
         $nestedDirs = [];
         if ($finder->hasResults()) {
             foreach ($finder as $file) {
-                $nestedDirs += Yaml::parseFile($file->getPathname());
+                $nestedDirs = \array_replace_recursive($nestedDirs, Yaml::parseFile($file->getPathname()));
             }
         }
 
