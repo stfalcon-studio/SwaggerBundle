@@ -4,18 +4,18 @@
     "type": "symfony-bundle",
     "license": "MIT",
     "require": {
-        "php": "^7.0",
+        "php": "^7.1",
         "ext-ctype": "*",
         "ext-iconv": "*",
-        "symfony/console": "4.2.*",
+        "symfony/console": "^4.2",
         "symfony/flex": "^1.1",
-        "symfony/framework-bundle": "4.2.*",
-        "symfony/twig-bundle": "^4.0",
-        "symfony/yaml": "4.2.*",
-        "symfony/asset": "^4.0",
-        "symfony/finder": "^4.0",
+        "symfony/framework-bundle": "^4.2",
+        "symfony/twig-bundle": "^4.2",
+        "symfony/yaml": "^4.2",
+        "symfony/asset": "^4.2",
+        "symfony/finder": "^4.2",
         "symfony/polyfill-ctype": "^1.11",
-        "symfony/templating": "4.2.*"
+        "symfony/templating": "^4.2",
     },
     "autoload": {
         "psr-4": {
