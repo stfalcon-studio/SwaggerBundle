@@ -15,7 +15,7 @@
         "symfony/asset": "^4.2",
         "symfony/finder": "^4.2",
         "symfony/polyfill-ctype": "^1.11",
-        "symfony/templating": "^4.2",
+        "symfony/templating": "^4.2"
     },
     "autoload": {
         "psr-4": {
