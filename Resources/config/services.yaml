@@ -8,4 +8,4 @@ services:
             $docsFolder: "%kernel.project_dir%/public/api/"
 
     StfalconStudio\SwaggerBundle\:
-        resource: '../../../src/{Command,Config,Generator}'
+        resource: '../../{Command,Config,Generator}'
