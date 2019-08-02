@@ -46,7 +46,7 @@ class Generator
     {
         $swaggerConfig = $this->configParser->parse();
 
-        $docs = $this->twig->render('SwaggerBundle:SwaggerUi:index.html.twig', [
+        $docs = $this->twig->render('@Swagger/SwaggerUi/index.html.twig', [
             'swagger_data' => $swaggerConfig,
         ]);
 

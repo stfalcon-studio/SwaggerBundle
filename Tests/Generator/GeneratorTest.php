@@ -70,7 +70,7 @@ final class GeneratorTest extends TestCase
         $this->twig
             ->expects(self::once())
             ->method('render')
-            ->with('SwaggerBundle:SwaggerUi:index.html.twig', ['swagger_data' => $swaggerConfig])
+            ->with('@Swagger/SwaggerUi/index.html.twig', ['swagger_data' => $swaggerConfig])
             ->willReturn($docs)
         ;
 
