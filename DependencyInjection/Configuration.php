@@ -12,6 +12,7 @@ declare(strict_types=1);
 
 namespace StfalconStudio\SwaggerBundle\DependencyInjection;
 
+use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
@@ -27,10 +28,11 @@ class Configuration implements ConfigurationInterface
     {
         $treeBuilder = new TreeBuilder('swagger');
 
-        $treeBuilder
-            ->getRootNode()
-            ->children()
-                ->scalarNode('config_folder')->cannotBeEmpty()->isRequired()->end()
+        /** @var ArrayNodeDefinition $root */
+        $root = $treeBuilder->getRootNode();
+
+        $root->children()
+            ->scalarNode('config_folder')->cannotBeEmpty()->isRequired()->end()
         ;
 
         return $treeBuilder;

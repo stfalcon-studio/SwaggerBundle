@@ -33,6 +33,7 @@
         "thecodingmachine/phpstan-strict-rules": "^0.11",
         "phpunit/phpunit": "^7.5",
         "slam/phpstan-extensions": "^3.5",
+        "symfony/filesystem": "^4.3",
         "symfony/phpunit-bridge": "^4.3"
     },
     "autoload": {

@@ -16,6 +16,7 @@ use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use StfalconStudio\SwaggerBundle\Generator\Generator;
 use StfalconStudio\SwaggerBundle\Config\ConfigParser;
+use Symfony\Component\Filesystem\Filesystem;
 use Twig\Environment;
 
 final class GeneratorTest extends TestCase
@@ -32,6 +33,9 @@ final class GeneratorTest extends TestCase
     /** @var ConfigParser|MockObject */
     private $parser;
 
+    /** @var Filesystem */
+    private $filesystem;
+
     /** @var Generator */
     private $generator;
 
@@ -39,8 +43,8 @@ final class GeneratorTest extends TestCase
     {
         $this->twig = $this->createMock(Environment::class);
         $this->parser = $this->createMock(ConfigParser::class);
-
-        \file_put_contents($this->docsFile, '');
+        $this->filesystem = new Filesystem();
+        $this->filesystem->dumpFile($this->docsFile, '');
 
         $this->generator = new Generator($this->twig, $this->parser, $this->docsFolder);
     }
@@ -53,7 +57,7 @@ final class GeneratorTest extends TestCase
             $this->generator
         );
 
-        \unlink($this->docsFile);
+        $this->filesystem->remove($this->docsFile);
     }
 
     public function testGenerate(): void
