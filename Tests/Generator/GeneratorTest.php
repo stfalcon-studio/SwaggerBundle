@@ -16,7 +16,7 @@ use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use StfalconStudio\SwaggerBundle\Generator\Generator;
 use StfalconStudio\SwaggerBundle\Config\ConfigParser;
-use Symfony\Component\Templating\EngineInterface;
+use Twig\Environment;
 
 final class GeneratorTest extends TestCase
 {
@@ -26,8 +26,8 @@ final class GeneratorTest extends TestCase
     /** @var string */
     private $docsFile = __DIR__.'/Fixtures/index.html';
 
-    /** @var EngineInterface|MockObject */
-    private $engine;
+    /** @var Environment|MockObject */
+    private $twig;
 
     /** @var ConfigParser|MockObject */
     private $parser;
@@ -37,18 +37,18 @@ final class GeneratorTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->engine = $this->createMock(EngineInterface::class);
+        $this->twig = $this->createMock(Environment::class);
         $this->parser = $this->createMock(ConfigParser::class);
 
         \file_put_contents($this->docsFile, '');
 
-        $this->generator = new Generator($this->engine, $this->parser, $this->docsFolder);
+        $this->generator = new Generator($this->twig, $this->parser, $this->docsFolder);
     }
 
     protected function tearDown(): void
     {
         unset(
-            $this->engine,
+            $this->twig,
             $this->parser,
             $this->generator
         );
@@ -67,7 +67,7 @@ final class GeneratorTest extends TestCase
         ;
 
         $docs = 'generated docs';
-        $this->engine
+        $this->twig
             ->expects(self::once())
             ->method('render')
             ->with('SwaggerBundle:SwaggerUi:index.html.twig', ['swagger_data' => $swaggerConfig])

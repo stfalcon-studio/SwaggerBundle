@@ -20,7 +20,7 @@
         "symfony/asset": "^4.3",
         "symfony/finder": "^4.3",
         "symfony/polyfill-ctype": "^1.11",
-        "symfony/templating": "^4.3"
+        "twig/twig": "^2.11"
     },
     "require-dev": {
         "escapestudios/symfony2-coding-standard": "^3.8",

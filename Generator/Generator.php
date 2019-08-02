@@ -12,29 +12,29 @@ declare(strict_types=1);
 
 namespace StfalconStudio\SwaggerBundle\Generator;
 
-use Symfony\Component\Filesystem\Filesystem;
-use Symfony\Component\Templating\EngineInterface;
 use StfalconStudio\SwaggerBundle\Config\ConfigParser;
+use Symfony\Component\Filesystem\Filesystem;
+use Twig\Environment;
 
 /**
  * Generator.
  */
 class Generator
 {
-    private $engine;
+    private $twig;
 
     private $configParser;
 
     private $docsFolder;
 
     /**
-     * @param EngineInterface $engine
-     * @param ConfigParser    $configParser
-     * @param string          $docsFolder
+     * @param Environment  $twig
+     * @param ConfigParser $configParser
+     * @param string       $docsFolder
      */
-    public function __construct(EngineInterface $engine, ConfigParser $configParser, string $docsFolder)
+    public function __construct(Environment $twig, ConfigParser $configParser, string $docsFolder)
     {
-        $this->engine = $engine;
+        $this->twig = $twig;
         $this->configParser = $configParser;
         $this->docsFolder = $docsFolder;
     }
@@ -47,7 +47,7 @@ class Generator
     {
         $swaggerConfig = $this->configParser->parse();
 
-        $docs = $this->engine->render('SwaggerBundle:SwaggerUi:index.html.twig', [
+        $docs = $this->twig->render('SwaggerBundle:SwaggerUi:index.html.twig', [
             'swagger_data' => $swaggerConfig,
         ]);
 
