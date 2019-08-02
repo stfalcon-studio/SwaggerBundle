@@ -40,8 +40,7 @@ class Generator
     }
 
     /**
-     * Generate static file index.html with Swagger UI
-     * Path: /app/public/api/index.html
+     * Generate static file index.html with Swagger UI.
      */
     public function generate(): void
     {
