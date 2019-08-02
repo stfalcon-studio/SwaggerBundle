@@ -1,4 +1,12 @@
 <?php
+/*
+ * This file is part of the SwaggerBundle.
+ *
+ * (c) Stfalcon Studio <stfalcon.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
 declare(strict_types=1);
 
@@ -7,7 +15,7 @@ namespace StfalconStudio\SwaggerBundle\Tests\Config;
 use PHPUnit\Framework\TestCase;
 use StfalconStudio\SwaggerBundle\Config\ConfigParser;
 
-class ConfigParserTest extends TestCase
+final class ConfigParserTest extends TestCase
 {
     /** @var ConfigParser */
     private $configParser;
@@ -30,7 +38,7 @@ class ConfigParserTest extends TestCase
             'openapi' => '3.0.0',
             'info' => [
                 'title' => 'Simple API overview',
-                'version' => '2.0.0'
+                'version' => '2.0.0',
             ],
             'paths' => [
                 '/orders' => [
@@ -39,7 +47,7 @@ class ConfigParserTest extends TestCase
                         'summary' => 'Create Order',
                         'responses' => [
                             '201' => [
-                                'description' => '201 response'
+                                'description' => '201 response',
                             ],
                         ],
                     ],

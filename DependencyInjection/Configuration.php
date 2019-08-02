@@ -1,4 +1,12 @@
 <?php
+/*
+ * This file is part of the SwaggerBundle.
+ *
+ * (c) Stfalcon Studio <stfalcon.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
 declare(strict_types=1);
 
@@ -17,9 +25,10 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder(): TreeBuilder
     {
-        $treeBuilder = new TreeBuilder();
+        $treeBuilder = new TreeBuilder('swagger');
 
-        $treeBuilder->root('swagger')
+        $treeBuilder
+            ->getRootNode()
             ->children()
                 ->scalarNode('config_folder')->cannotBeEmpty()->isRequired()->end()
         ;

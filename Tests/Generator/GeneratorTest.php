@@ -1,4 +1,12 @@
 <?php
+/*
+ * This file is part of the SwaggerBundle.
+ *
+ * (c) Stfalcon Studio <stfalcon.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
 declare(strict_types=1);
 
@@ -10,7 +18,7 @@ use StfalconStudio\SwaggerBundle\Generator\Generator;
 use StfalconStudio\SwaggerBundle\Config\ConfigParser;
 use Symfony\Component\Templating\EngineInterface;
 
-class GeneratorTest extends TestCase
+final class GeneratorTest extends TestCase
 {
     /** @var string */
     private $docsFolder = __DIR__.'/Fixtures/';

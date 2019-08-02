@@ -1,4 +1,12 @@
 <?php
+/*
+ * This file is part of the SwaggerBundle.
+ *
+ * (c) Stfalcon Studio <stfalcon.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
 declare(strict_types=1);
 
@@ -16,8 +24,6 @@ class SwaggerExtension extends Extension
 {
     /**
      * {@inheritdoc}
-     *
-     * @throws \Exception
      */
     public function load(array $configs, ContainerBuilder $container): void
     {
@@ -26,6 +32,6 @@ class SwaggerExtension extends Extension
         $container->setParameter('swagger.config_folder', $config['config_folder']);
 
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
-        $loader->load('services.yml');
+        $loader->load('services.yaml');
     }
 }

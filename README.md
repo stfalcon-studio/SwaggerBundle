@@ -134,3 +134,7 @@ bin/console assets:install && bin/console swagger:generate-docs
 ```
 
 The file will be saved in the `%kernel.publid_dic%/public/api/index.html` folder and shared at `http://<project>/api/index.html`.
+
+## Contributing
+
+Read the [CONTRIBUTING](https://github.com/stfalcon-studio/swagger-bundle/blob/master/.github/CONTRIBUTING.md) file.

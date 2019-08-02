@@ -1,4 +1,12 @@
 <?php
+/*
+ * This file is part of the SwaggerBundle.
+ *
+ * (c) Stfalcon Studio <stfalcon.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
 declare(strict_types=1);
 
@@ -12,14 +20,9 @@ use Symfony\Component\Yaml\Yaml;
  */
 class ConfigParser
 {
-    /**
-     * @var string
-     */
     private $configFolder;
 
     /**
-     * Iterator constructor.
-     *
      * @param string $configFolder
      */
     public function __construct(string $configFolder)
@@ -52,7 +55,7 @@ class ConfigParser
 
                 if (\is_dir($path)) {
                     $config[$key] = $this->parseDir($path);
-                } else if(\is_file($path)) {
+                } elseif (\is_file($path)) {
                     $config[$key] = $this->parseFile($path);
                 } else {
                     throw new \InvalidArgumentException(\sprintf('`%s` not exists', $path));

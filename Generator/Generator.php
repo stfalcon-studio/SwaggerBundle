@@ -1,4 +1,12 @@
 <?php
+/*
+ * This file is part of the SwaggerBundle.
+ *
+ * (c) Stfalcon Studio <stfalcon.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
 declare(strict_types=1);
 
@@ -13,19 +21,10 @@ use StfalconStudio\SwaggerBundle\Config\ConfigParser;
  */
 class Generator
 {
-    /**
-     * @var EngineInterface
-     */
     private $engine;
 
-    /**
-     * @var ConfigParser
-     */
     private $configParser;
 
-    /**
-     * @var string
-     */
     private $docsFolder;
 
     /**
@@ -49,7 +48,7 @@ class Generator
         $swaggerConfig = $this->configParser->parse();
 
         $docs = $this->engine->render('SwaggerBundle:SwaggerUi:index.html.twig', [
-            'swagger_data' => $swaggerConfig
+            'swagger_data' => $swaggerConfig,
         ]);
 
         $filePath = $this->docsFolder.'index.html';

@@ -1,4 +1,12 @@
 <?php
+/*
+ * This file is part of the SwaggerBundle.
+ *
+ * (c) Stfalcon Studio <stfalcon.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
 declare(strict_types=1);
 
@@ -14,31 +22,25 @@ use StfalconStudio\SwaggerBundle\Generator\Generator;
  */
 class GenerateDocsCommand extends Command
 {
-    protected static $defaultName = 'swagger:generate-docs';
-
-    /**
-     * @var Generator
-     */
     private $generator;
 
     /**
-     * GenerateDocs constructor.
-     *
      * @param Generator $generator
      */
     public function __construct(Generator $generator)
     {
-        $this->generator = $generator;
-
         parent::__construct();
+
+        $this->generator = $generator;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     protected function configure(): void
     {
         $this
+            ->setName('swagger:generate-docs')
             ->setDescription('Generate swagger docs')
             ->setHelp('This command generate swagger docs.')
         ;
