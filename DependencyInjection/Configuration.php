@@ -31,8 +31,10 @@ class Configuration implements ConfigurationInterface
         /** @var ArrayNodeDefinition $root */
         $root = $treeBuilder->getRootNode();
 
-        $root->children()
-            ->scalarNode('config_folder')->cannotBeEmpty()->isRequired()->end()
+        $root
+            ->children()
+                ->scalarNode('config_folder')->cannotBeEmpty()->isRequired()
+            ->end()
         ;
 
         return $treeBuilder;
