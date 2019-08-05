@@ -1,0 +1,6 @@
+"/orders":
+    post:
+        operationId: CreateOrder
+        summary: Create Order
+        responses:
+            "$responses/created.yaml"

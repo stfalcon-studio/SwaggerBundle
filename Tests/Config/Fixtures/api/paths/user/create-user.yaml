@@ -1,0 +1,6 @@
+"/users":
+    post:
+        operationId: CreateUser
+        summary: Create User
+        responses:
+            "$responses"
