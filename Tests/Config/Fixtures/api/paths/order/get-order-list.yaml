@@ -1,4 +1,4 @@
 "/orders":
-  get:
-    operationId: GetOrderList
-    summary: Get orders list
+    get:
+        operationId: GetOrderList
+        summary: Get orders list

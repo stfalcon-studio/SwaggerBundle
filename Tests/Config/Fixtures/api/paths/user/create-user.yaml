@@ -1,6 +1,6 @@
 "/users":
-  post:
-    operationId: CreateUser
-    summary: Create User
-    responses:
-      "$responses"
+    post:
+        operationId: CreateUser
+        summary: Create User
+        responses:
+            "$responses"

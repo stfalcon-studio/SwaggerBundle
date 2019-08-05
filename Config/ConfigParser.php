@@ -92,7 +92,10 @@ class ConfigParser
         $nestedDirs = [];
         if ($finder->hasResults()) {
             foreach ($finder as $file) {
-                $nestedDirs[] = \array_replace_recursive($nestedDirs, Yaml::parseFile($file->getPathname()));
+                $nestedDirs = \array_replace_recursive($nestedDirs, Yaml::parseFile($file->getPathname()));
+                if (null === $nestedDirs) {
+                    throw new \UnexpectedValueException('Expected array after parsing, NULL given');
+                }
             }
         }
 
