@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<ruleset name="Stfalcon Codding Standard"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="vendor/squizlabs/php_codesniffer/phpcs.xsd"
+>
+    <arg name="basepath" value="."/>
+    <arg name="cache" value=".phpcs-cache"/>
+    <arg name="extensions" value="php"/>
+    <arg name="encoding" value="utf-8"/>
+    <arg name="colors"/>
+    <arg name="parallel" value="4"/>
+    <arg value="p"/>
+    <arg value="s"/>
+
+    <file>./</file>
+    <exclude-pattern>/vendor/</exclude-pattern>
+    <exclude-pattern>/Fixtures/</exclude-pattern>
+
+    <!-- Ignore required comments in docblocks for test files -->
+    <rule ref="Symfony.Commenting.ClassComment">
+        <exclude-pattern>./tests/</exclude-pattern>
+    </rule>
+    <rule ref="Symfony.Commenting.FunctionComment">
+        <exclude-pattern>./tests/</exclude-pattern>
+    </rule>
+    <rule ref="Symfony.Functions.ReturnType.Invalid">
+        <exclude-pattern>./tests/</exclude-pattern>
+    </rule>
+
+    <!-- Don't hide tokenizer exceptions -->
+    <rule ref="Internal.Tokenizer.Exception">
+        <type>error</type>
+    </rule>
+
+    <rule ref="Generic">
+        <exclude name="Generic"/>
+    </rule>
+</ruleset>
