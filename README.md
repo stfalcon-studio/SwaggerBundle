@@ -1,6 +1,6 @@
 # SwaggerBundle
 
-:package: Creates a [Swagger-ui](https://github.com/wordnik/swagger-ui) page (something like [this](https://petstore.swagger.io/)) in your Symfony4 application.
+:package: Creates a [Swagger-ui](https://github.com/wordnik/swagger-ui) page (something like [this](https://petstore.swagger.io/)) in Symfony application.
 
 ## Description
 
@@ -30,14 +30,14 @@ return [
 
 First all we need to set up the folder where the spec is be storing.
 This is the base folder relative for which we will structure the specification files.
-```
+```yaml
 swagger:
     config_folder: '%kernel.project_dir%/docs/api/'
 ```
 
 Imagine you have a Swagger spec like this:
 
-```
+```yaml
 openapi: "3.0.0"
 info:
   title: Simple API overview
@@ -63,7 +63,7 @@ paths:
 
 Here is our desired folder structure:
 
-```
+```yaml
 /docs/api/
      ├── index.yaml
      ├── paths
@@ -80,7 +80,7 @@ Root file is `index.yaml`. Using `index.yaml` as file name for your root file is
 Here is list of files with their contents:
 ### index.yaml
 
-```
+```yaml
 openapi: "3.0.0"
 info:
   title: Simple API overview
@@ -91,7 +91,7 @@ paths:
 
 ### paths/user/create-user.yaml
 
-```
+```yaml
 "/users":
   get:
     operationId: CreateUser
@@ -102,7 +102,7 @@ paths:
 
 ### paths/order/create-order.yaml
 
-```
+```yaml
 "/orders":
   post:
     operationId: CreateOrder
@@ -113,7 +113,7 @@ paths:
 
 ### paths/responses/created.yaml
 
-```
+```yaml
 '201':
   description: |-
     201 response
@@ -128,7 +128,7 @@ As you can see from the example, in order to specify a folder or file for the in
 
 For generating Swagger UI static file use console command:
 
-```
+```bash
 bin/console assets:install && bin/console swagger:generate-docs
 ```
 
