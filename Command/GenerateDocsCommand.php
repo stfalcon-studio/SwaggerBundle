@@ -22,6 +22,7 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class GenerateDocsCommand extends Command
 {
+    /** @var Generator */
     private $generator;
 
     /**

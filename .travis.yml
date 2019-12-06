@@ -2,13 +2,18 @@ language: php
 
 sudo: false
 
+cache:
+  directories:
+    - $HOME/.composer/cache/files
+    - $HOME/symfony-bridge/.phpunit
+
 php:
-  - '7.1'
   - '7.2'
   - '7.3'
+  - '7.4'
 
 env:
-  - SYMFONY_VERSION=4.3.*
+  - SYMFONY_VERSION=4.4.*
 
 before_install:
   - composer self-update
@@ -24,10 +29,6 @@ script:
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
-
-cache:
-  directories:
-    - $COMPOSER_CACHE_DIR
 
 notifications:
   email:
