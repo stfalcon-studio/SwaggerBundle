@@ -1,6 +1,6 @@
 # SwaggerBundle
 
-Creates a [Swagger-ui](https://github.com/wordnik/swagger-ui) page (something like [this](https://petstore.swagger.io/)) in your Symfony4 application.
+:package: Creates a [Swagger-ui](https://github.com/wordnik/swagger-ui) page (something like [this](https://petstore.swagger.io/)) in your Symfony4 application.
 
 ## Description
 
