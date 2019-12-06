@@ -20,6 +20,7 @@ use Symfony\Component\Yaml\Yaml;
  */
 class ConfigParser
 {
+    /** @var string */
     private $configFolder;
 
     /**

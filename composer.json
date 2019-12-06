@@ -9,32 +9,32 @@
         "issues": "https://github.com/stfalcon-studio/swagger-bundle/issues"
     },
     "require": {
-        "php": "^7.1",
+        "php": "^7.2.5",
         "ext-ctype": "*",
         "ext-iconv": "*",
-        "symfony/console": "^4.3",
-        "symfony/flex": "^1.1",
-        "symfony/framework-bundle": "^4.3",
-        "symfony/twig-bundle": "^4.3",
-        "symfony/yaml": "^4.3",
-        "symfony/asset": "^4.3",
-        "symfony/finder": "^4.3",
-        "symfony/polyfill-ctype": "^1.11",
-        "twig/twig": "^2.11"
+        "symfony/console": "^4.4",
+        "symfony/flex": "^1.5",
+        "symfony/framework-bundle": "^4.4",
+        "symfony/twig-bundle": "^4.4",
+        "symfony/yaml": "^4.4",
+        "symfony/asset": "^4.4",
+        "symfony/finder": "^4.4",
+        "symfony/polyfill-ctype": "^1.13",
+        "twig/twig": "^2.12 || ^3.0"
     },
     "require-dev": {
-        "escapestudios/symfony2-coding-standard": "^3.8",
-        "friendsofphp/php-cs-fixer": "^2.15",
+        "escapestudios/symfony2-coding-standard": "^3.10",
+        "friendsofphp/php-cs-fixer": "^2.16",
         "johnkary/phpunit-speedtrap": "^3.1",
         "phpstan/phpstan": "^0.11",
         "phpstan/phpstan-deprecation-rules": "^0.11",
         "phpstan/phpstan-doctrine": "^0.11",
         "phpstan/phpstan-phpunit": "^0.11",
         "thecodingmachine/phpstan-strict-rules": "^0.11",
-        "phpunit/phpunit": "^7.5",
+        "phpunit/phpunit": "^8.5",
         "slam/phpstan-extensions": "^3.5",
-        "symfony/filesystem": "^4.3",
-        "symfony/phpunit-bridge": "^4.3"
+        "symfony/filesystem": "^4.4",
+        "symfony/phpunit-bridge": "^4.4"
     },
     "autoload": {
         "psr-4": {

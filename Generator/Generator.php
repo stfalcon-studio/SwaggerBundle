@@ -21,10 +21,13 @@ use Twig\Environment;
  */
 class Generator
 {
+    /** @var Environment */
     private $twig;
 
+    /** @var ConfigParser */
     private $configParser;
 
+    /** @var string */
     private $docsFolder;
 
     /**
@@ -46,9 +49,12 @@ class Generator
     {
         $swaggerConfig = $this->configParser->parse();
 
-        $docs = $this->twig->render('@Swagger/SwaggerUi/index.html.twig', [
-            'swagger_data' => $swaggerConfig,
-        ]);
+        $docs = $this->twig->render(
+            '@Swagger/SwaggerUi/index.html.twig',
+            [
+                'swagger_data' => $swaggerConfig,
+            ]
+        );
 
         $filePath = $this->docsFolder.'index.html';
 
