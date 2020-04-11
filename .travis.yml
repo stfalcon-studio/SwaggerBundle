@@ -8,12 +8,12 @@ cache:
     - $HOME/symfony-bridge/.phpunit
 
 php:
-  - '7.2'
   - '7.3'
   - '7.4'
 
 env:
   - SYMFONY_VERSION=4.4.*
+  - SYMFONY_VERSION=5.0.*
 
 before_install:
   - composer self-update
@@ -24,7 +24,7 @@ install:
 
 script:
   - ./vendor/bin/phpcs ./ -p --encoding=utf-8 --extensions=php --ignore="vendor|Tests" --standard=./vendor/escapestudios/symfony2-coding-standard/Symfony
-  - ./vendor/bin/phpstan analyse -l 7 --no-progress -c phpstan.neon ./
+  - ./vendor/bin/phpstan analyse -l 8 --no-progress -c phpstan.neon ./
   - ./vendor/bin/phpunit -c phpunit.xml.dist --coverage-clover=coverage.xml
 
 after_success:
