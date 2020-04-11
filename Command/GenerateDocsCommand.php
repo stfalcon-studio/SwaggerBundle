@@ -22,6 +22,8 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class GenerateDocsCommand extends Command
 {
+    protected static $defaultName = 'swagger:generate-docs';
+
     /** @var Generator */
     private $generator;
 
@@ -41,7 +43,6 @@ class GenerateDocsCommand extends Command
     protected function configure(): void
     {
         $this
-            ->setName('swagger:generate-docs')
             ->setDescription('Generate swagger docs')
             ->setHelp('This command generate swagger docs.')
         ;
@@ -50,10 +51,12 @@ class GenerateDocsCommand extends Command
     /**
      * {@inheritdoc}
      */
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $this->generator->generate();
 
         $output->writeln('<fg=green>Swagger UI successfully generated and is available at `/api/index.html`</>');
+
+        return 0;
     }
 }

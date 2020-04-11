@@ -54,7 +54,7 @@ final class GeneratorTest extends TestCase
         unset(
             $this->twig,
             $this->parser,
-            $this->generator
+            $this->generator,
         );
 
         $this->filesystem->remove($this->docsFile);
