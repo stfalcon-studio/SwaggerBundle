@@ -7,6 +7,7 @@ parameters:
     level: 8
     excludes_analyse:
         - '%rootDir%/../../../Tests/*'
+        - '%rootDir%/../../../tests/*'
         - '%rootDir%/../../../vendor/*'
     fileExtensions:
         - 'php'
