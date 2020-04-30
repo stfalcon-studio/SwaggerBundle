@@ -136,4 +136,4 @@ The file will be saved in the `%kernel.publid_dic%/public/api/index.html` folder
 
 ## Contributing
 
-Read the [CONTRIBUTING](https://github.com/stfalcon-studio/swagger-bundle/blob/master/.github/CONTRIBUTING.md) file.
+Read the [CONTRIBUTING](https://github.com/stfalcon-studio/SwaggerBundle/blob/master/.github/CONTRIBUTING.md) file.
