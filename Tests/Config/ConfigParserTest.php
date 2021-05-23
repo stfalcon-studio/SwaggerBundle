@@ -28,7 +28,7 @@ final class ConfigParserTest extends TestCase
     protected function tearDown(): void
     {
         unset(
-            $this->configParser
+            $this->configParser,
         );
     }
 
