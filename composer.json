@@ -23,15 +23,14 @@
         "twig/twig": "^3.0"
     },
     "require-dev": {
-        "escapestudios/symfony2-coding-standard": "^3.11",
-        "friendsofphp/php-cs-fixer": "^2.16",
-        "johnkary/phpunit-speedtrap": "^3.2",
+        "escapestudios/symfony2-coding-standard": "^3.12",
+        "friendsofphp/php-cs-fixer": "^3.0",
         "phpstan/phpstan": "^0.12",
         "phpstan/phpstan-deprecation-rules": "^0.12",
         "phpstan/phpstan-doctrine": "^0.12",
         "phpstan/phpstan-phpunit": "^0.12",
         "thecodingmachine/phpstan-strict-rules": "^0.12",
-        "phpunit/phpunit": "^9.1",
+        "phpunit/phpunit": "^9.5",
         "slam/phpstan-extensions": "^4.0",
         "symfony/filesystem": "^4.4 || ^5.0",
         "symfony/phpunit-bridge": "^4.4 || ^5.0"
