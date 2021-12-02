@@ -17,8 +17,7 @@ use StfalconStudio\SwaggerBundle\Config\ConfigParser;
 
 final class ConfigParserTest extends TestCase
 {
-    /** @var ConfigParser */
-    private $configParser;
+    private ConfigParser $configParser;
 
     protected function setUp(): void
     {

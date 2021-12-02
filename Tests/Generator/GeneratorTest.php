@@ -21,11 +21,9 @@ use Twig\Environment;
 
 final class GeneratorTest extends TestCase
 {
-    /** @var string */
-    private $docsFolder = __DIR__.'/Fixtures/';
+    private string $docsFolder = __DIR__.'/Fixtures/';
 
-    /** @var string */
-    private $docsFile = __DIR__.'/Fixtures/index.html';
+    private string $docsFile = __DIR__.'/Fixtures/index.html';
 
     /** @var Environment|MockObject */
     private $twig;
@@ -33,11 +31,9 @@ final class GeneratorTest extends TestCase
     /** @var ConfigParser|MockObject */
     private $parser;
 
-    /** @var Filesystem */
-    private $filesystem;
+    private Filesystem $filesystem;
 
-    /** @var Generator */
-    private $generator;
+    private Generator $generator;
 
     protected function setUp(): void
     {

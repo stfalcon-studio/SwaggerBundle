@@ -24,8 +24,7 @@ class GenerateDocsCommand extends Command
 {
     protected static $defaultName = 'swagger:generate-docs';
 
-    /** @var Generator */
-    private $generator;
+    private Generator $generator;
 
     /**
      * @param Generator $generator

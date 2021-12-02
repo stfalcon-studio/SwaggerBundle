@@ -21,14 +21,11 @@ use Twig\Environment;
  */
 class Generator
 {
-    /** @var Environment */
-    private $twig;
+    private Environment $twig;
 
-    /** @var ConfigParser */
-    private $configParser;
+    private ConfigParser $configParser;
 
-    /** @var string */
-    private $docsFolder;
+    private string$docsFolder;
 
     /**
      * @param Environment  $twig
