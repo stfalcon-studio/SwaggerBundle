@@ -12,6 +12,7 @@ declare(strict_types=1);
 
 namespace StfalconStudio\SwaggerBundle\Config;
 
+use StfalconStudio\SwaggerBundle\Exception\UnexpectedValueException;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Yaml\Yaml;
 
@@ -36,13 +37,17 @@ class ConfigParser
     public function parse(): array
     {
         $config = Yaml::parseFile($this->configFolder.'index.yaml');
-        $config = $this->iterate($config);
+        if (!\is_array($config)) {
+            throw new UnexpectedValueException();
+        }
 
-        return $config;
+        return $this->iterate($config);
     }
 
     /**
      * @param array $config
+     *
+     * @throws UnexpectedValueException
      *
      * @return array
      */
@@ -77,6 +82,8 @@ class ConfigParser
     /**
      * @param string $dirPath
      *
+     * @throws UnexpectedValueException
+     *
      * @return array
      */
     private function parseDir(string $dirPath): array
@@ -92,7 +99,12 @@ class ConfigParser
         $nestedDirs = [];
         if ($finder->hasResults()) {
             foreach ($finder as $file) {
-                $nestedDirs = \array_replace_recursive($nestedDirs, Yaml::parseFile($file->getPathname()));
+                $replacements = Yaml::parseFile($file->getPathname());
+                if (!\is_array($replacements)) {
+                    throw new UnexpectedValueException();
+                }
+
+                $nestedDirs = \array_replace_recursive($nestedDirs, $replacements);
 
                 if (!\is_array($nestedDirs)) {
                     throw new \UnexpectedValueException('Expected array after parsing, NULL given');
@@ -106,10 +118,18 @@ class ConfigParser
     /**
      * @param string $filePath
      *
+     * @throws UnexpectedValueException
+     *
      * @return array
      */
     private function parseFile(string $filePath): array
     {
-        return Yaml::parseFile($filePath);
+        $result = Yaml::parseFile($filePath);
+
+        if (!\is_array($result)) {
+            throw new UnexpectedValueException();
+        }
+
+        return $result;
     }
 }
