@@ -1,6 +1,6 @@
 <?php
 /*
- * This file is part of the StfalconStudioDoctrineRedisCacheBundle.
+ * This file is part of the SwaggerBundle.
  *
  * (c) Stfalcon LLC <stfalcon.com>
  *
