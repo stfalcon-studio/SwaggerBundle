@@ -32,7 +32,7 @@ class ConfigParser
     }
 
     /**
-     * @return array
+     * @return mixed[]
      */
     public function parse(): array
     {
@@ -49,7 +49,7 @@ class ConfigParser
      *
      * @throws UnexpectedValueException
      *
-     * @return array
+     * @return mixed[]
      */
     private function iterate(array $config): array
     {
@@ -84,7 +84,7 @@ class ConfigParser
      *
      * @throws UnexpectedValueException
      *
-     * @return array
+     * @return mixed[]
      */
     private function parseDir(string $dirPath): array
     {
@@ -120,7 +120,7 @@ class ConfigParser
      *
      * @throws UnexpectedValueException
      *
-     * @return array
+     * @return mixed[]
      */
     private function parseFile(string $filePath): array
     {
