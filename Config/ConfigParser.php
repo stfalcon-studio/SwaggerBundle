@@ -45,7 +45,7 @@ class ConfigParser
     }
 
     /**
-     * @param array $config
+     * @param mixed[] $config
      *
      * @throws UnexpectedValueException
      *
