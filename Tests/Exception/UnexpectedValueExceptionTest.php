@@ -10,7 +10,7 @@
 
 declare(strict_types=1);
 
-namespace StfalconStudio\SwaggerBundle\Tests\DependencyInjection\Exception;
+namespace StfalconStudio\SwaggerBundle\Tests\Exception;
 
 use PHPUnit\Framework\TestCase;
 use StfalconStudio\SwaggerBundle\Exception\UnexpectedValueException;
