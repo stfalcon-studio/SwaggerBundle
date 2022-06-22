@@ -26,10 +26,10 @@ final class GeneratorTest extends TestCase
     private string $docsFile = __DIR__.'/Fixtures/index.html';
 
     /** @var Environment|MockObject */
-    private $twig;
+    private Environment|MockObject $twig;
 
     /** @var ConfigParser|MockObject */
-    private $parser;
+    private ConfigParser|MockObject $parser;
 
     private Filesystem $filesystem;
 
