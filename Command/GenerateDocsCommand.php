@@ -24,16 +24,12 @@ use Symfony\Component\Console\Output\OutputInterface;
 #[AsCommand(name: 'swagger:generate-docs', description: 'Generates swagger docs')]
 class GenerateDocsCommand extends Command
 {
-    private readonly Generator $generator;
-
     /**
      * @param Generator $generator
      */
-    public function __construct(Generator $generator)
+    public function __construct(private readonly Generator $generator)
     {
         parent::__construct();
-
-        $this->generator = $generator;
     }
 
     /**

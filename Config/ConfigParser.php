@@ -21,14 +21,11 @@ use Symfony\Component\Yaml\Yaml;
  */
 class ConfigParser
 {
-    private string $configFolder;
-
     /**
      * @param string $configFolder
      */
-    public function __construct(string $configFolder)
+    public function __construct(private readonly string $configFolder)
     {
-        $this->configFolder = $configFolder;
     }
 
     /**
