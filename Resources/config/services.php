@@ -8,7 +8,6 @@
  * file that was distributed with this source code.
  */
 
-
 declare(strict_types=1);
 
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
@@ -16,11 +15,13 @@ use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigura
 return static function (ContainerConfigurator $containerConfigurator): void {
     $services = $containerConfigurator->services();
 
-    $services->defaults()
+    $services
+        ->defaults()
         ->autowire()
         ->autoconfigure()
         ->bind('$configFolder', '%swagger.config_folder%')
-        ->bind('$docsFolder', '%kernel.project_dir%/public/api/');
+        ->bind('$docsFolder', '%kernel.project_dir%/public/api/')
+    ;
 
-    $services->load('StfalconStudio\SwaggerBundle\\', __DIR__ . '/../../{Command,Config,Generator}');
+    $services->load('StfalconStudio\SwaggerBundle\\', __DIR__.'/../../{Command,Config,Generator}');
 };
