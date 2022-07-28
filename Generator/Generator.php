@@ -21,22 +21,13 @@ use Twig\Environment;
  */
 class Generator
 {
-    private readonly Environment $twig;
-
-    private readonly ConfigParser $configParser;
-
-    private readonly string $docsFolder;
-
     /**
      * @param Environment  $twig
      * @param ConfigParser $configParser
      * @param string       $docsFolder
      */
-    public function __construct(Environment $twig, ConfigParser $configParser, string $docsFolder)
+    public function __construct(private readonly Environment $twig, private readonly ConfigParser $configParser, private readonly string $docsFolder)
     {
-        $this->twig = $twig;
-        $this->configParser = $configParser;
-        $this->docsFolder = $docsFolder;
     }
 
     /**
