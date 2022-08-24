@@ -24,6 +24,7 @@ final class GeneratorTest extends TestCase
     private string $docsFolder = __DIR__.'/Fixtures/';
 
     private string $docsFile = __DIR__.'/Fixtures/index.html';
+    private string $specificationFile = __DIR__.'/Fixtures/specification.json';
 
     /** @var Environment|MockObject */
     private Environment|MockObject $twig;
@@ -41,6 +42,7 @@ final class GeneratorTest extends TestCase
         $this->parser = $this->createMock(ConfigParser::class);
         $this->filesystem = new Filesystem();
         $this->filesystem->dumpFile($this->docsFile, '');
+        $this->filesystem->dumpFile($this->specificationFile, '');
 
         $this->generator = new Generator($this->twig, $this->parser, $this->docsFolder);
     }
@@ -54,11 +56,12 @@ final class GeneratorTest extends TestCase
         );
 
         $this->filesystem->remove($this->docsFile);
+        $this->filesystem->remove($this->specificationFile);
     }
 
     public function testGenerate(): void
     {
-        $swaggerConfig = ['open api config'];
+        $swaggerConfig = ['open api config' => 'value'];
 
         $this->parser
             ->expects(self::once())
@@ -76,6 +79,13 @@ final class GeneratorTest extends TestCase
 
         $this->generator->generate();
 
+        $swaggerConfigAsJson = <<<'EOT'
+{
+    "open api config": "value"
+}
+EOT;
+
         self::assertStringEqualsFile($this->docsFolder.'index.html', $docs);
+        self::assertStringEqualsFile($this->docsFolder.'specification.json', $swaggerConfigAsJson);
     }
 }
