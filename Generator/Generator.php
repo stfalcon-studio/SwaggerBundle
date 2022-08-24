@@ -45,8 +45,10 @@ class Generator
         );
 
         $filePath = $this->docsFolder.'index.html';
+        $filePathSpecification = $this->docsFolder.'specification.json';
 
         $fs = new Filesystem();
         $fs->dumpFile($filePath, $docs);
+        $fs->dumpFile($filePathSpecification, json_encode($swaggerConfig, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT));
     }
 }
