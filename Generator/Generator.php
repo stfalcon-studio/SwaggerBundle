@@ -49,6 +49,6 @@ class Generator
 
         $fs = new Filesystem();
         $fs->dumpFile($filePath, $docs);
-        $fs->dumpFile($filePathSpecification, json_encode($swaggerConfig, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT));
+        $fs->dumpFile($filePathSpecification, json_encode($swaggerConfig, \JSON_UNESCAPED_UNICODE | \JSON_UNESCAPED_SLASHES | \JSON_PRETTY_PRINT));
     }
 }
