@@ -25,8 +25,9 @@ class Generator
      * @param Environment  $twig
      * @param ConfigParser $configParser
      * @param string       $docsFolder
+     * @param string       $template
      */
-    public function __construct(private readonly Environment $twig, private readonly ConfigParser $configParser, private readonly string $docsFolder)
+    public function __construct(private readonly Environment $twig, private readonly ConfigParser $configParser, private readonly string $docsFolder, private readonly string $template)
     {
     }
 
@@ -38,7 +39,7 @@ class Generator
         $swaggerConfig = $this->configParser->parse();
 
         $docs = $this->twig->render(
-            '@Swagger/SwaggerUi/index.html.twig',
+            $this->template,
             [
                 'swagger_data' => $swaggerConfig,
             ]

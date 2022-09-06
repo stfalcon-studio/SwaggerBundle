@@ -20,6 +20,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         ->autowire()
         ->autoconfigure()
         ->bind('$configFolder', '%swagger.config_folder%')
+        ->bind('$template', '%swagger.template%')
         ->bind('$docsFolder', '%kernel.project_dir%/public/api/')
     ;
 
