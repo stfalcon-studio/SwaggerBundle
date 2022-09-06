@@ -42,7 +42,7 @@ final class GeneratorTest extends TestCase
         $this->filesystem = new Filesystem();
         $this->filesystem->dumpFile($this->docsFile, '');
 
-        $this->generator = new Generator($this->twig, $this->parser, $this->docsFolder);
+        $this->generator = new Generator($this->twig, $this->parser, $this->docsFolder, 'custom.html.twig');
     }
 
     protected function tearDown(): void
@@ -70,7 +70,7 @@ final class GeneratorTest extends TestCase
         $this->twig
             ->expects(self::once())
             ->method('render')
-            ->with('@Swagger/SwaggerUi/index.html.twig', ['swagger_data' => $swaggerConfig])
+            ->with('custom.html.twig', ['swagger_data' => $swaggerConfig])
             ->willReturn($docs)
         ;
 
