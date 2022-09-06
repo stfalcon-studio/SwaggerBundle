@@ -33,7 +33,8 @@ class Configuration implements ConfigurationInterface
 
         $root
             ->children()
-                ->scalarNode('config_folder')->cannotBeEmpty()->isRequired()
+                ->scalarNode('config_folder')->cannotBeEmpty()->isRequired()->end()
+                ->scalarNode('template')->defaultValue('@Swagger/SwaggerUi/index.html.twig')->end()
             ->end()
         ;
 

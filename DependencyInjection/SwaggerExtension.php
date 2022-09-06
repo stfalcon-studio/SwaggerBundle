@@ -30,6 +30,7 @@ class SwaggerExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
         $container->setParameter('swagger.config_folder', $config['config_folder']);
+        $container->setParameter('swagger.template', $config['template']);
 
         $loader = new PhpFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.php');
