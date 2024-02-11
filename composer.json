@@ -9,16 +9,16 @@
         "issues": "https://github.com/stfalcon-studio/swagger-bundle/issues"
     },
     "require": {
-        "php": ">=8.1",
+        "php": ">=8.2",
         "ext-ctype": "*",
         "ext-iconv": "*",
-        "symfony/console": "^6.4",
+        "symfony/console": "^7.0",
         "symfony/flex": "^v2.4",
-        "symfony/framework-bundle": "^6.4",
-        "symfony/twig-bundle": "^6.4",
-        "symfony/yaml": "^6.4",
-        "symfony/asset": "^6.4",
-        "symfony/finder": "^6.4",
+        "symfony/framework-bundle": "^7.0",
+        "symfony/twig-bundle": "^7.0",
+        "symfony/yaml": "^7.0",
+        "symfony/asset": "^7.0",
+        "symfony/finder": "^7.0",
         "symfony/polyfill-ctype": "^1.28",
         "twig/twig": "^3.8"
     },
@@ -30,9 +30,9 @@
         "phpstan/phpstan-symfony": "^1.3",
         "thecodingmachine/phpstan-strict-rules": "^1.0",
         "phpunit/phpunit": "^9.5",
-        "symfony/dotenv": "^6.4",
-        "symfony/filesystem": "^6.4",
-        "symfony/phpunit-bridge": "^6.4"
+        "symfony/dotenv": "^7.0",
+        "symfony/filesystem": "^7.0",
+        "symfony/phpunit-bridge": "^7.0"
     },
     "autoload": {
         "psr-4": {
