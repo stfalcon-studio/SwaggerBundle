@@ -2,6 +2,7 @@ name: CI
 
 on:
   pull_request:
+  workflow_dispatch: ~
   push:
     branches:
       - 'main'
@@ -17,7 +18,7 @@ jobs:
       - name: 'Setup PHP'
         uses: shivammathur/setup-php@v2
         with:
-          php-version: 8.1
+          php-version: 8.2
           ini-values: memory_limit=-1
           coverage: none
           tools: composer:v2
@@ -36,7 +37,7 @@ jobs:
       - name: 'Setup PHP'
         uses: shivammathur/setup-php@v2
         with:
-          php-version: 8.1
+          php-version: 8.2
           ini-values: memory_limit=-1
           coverage: none
           tools: composer:v2
@@ -57,7 +58,7 @@ jobs:
       - name: 'Setup PHP'
         uses: shivammathur/setup-php@v2
         with:
-          php-version: 8.1
+          php-version: 8.2
           ini-values: memory_limit=-1
           coverage: none
           tools: composer:v2
@@ -82,7 +83,7 @@ jobs:
       - name: 'Setup PHP'
         uses: shivammathur/setup-php@v2
         with:
-          php-version: 8.1
+          php-version: 8.2
           ini-values: memory_limit=-1
           coverage: none
           tools: composer:v2
@@ -102,9 +103,9 @@ jobs:
       fail-fast: false
       matrix:
         php-version:
-          - '8.1'
+          - '8.2'
         symfony-version:
-          - '6.4'
+          - '7.0'
     steps:
       - name: 'Checkout Code'
         uses: actions/checkout@v4
@@ -139,7 +140,7 @@ jobs:
       - name: 'Setup PHP'
         uses: shivammathur/setup-php@v2
         with:
-          php-version: 8.1
+          php-version: 8.2
           ini-values: memory_limit=-1
           coverage: pcov
           tools: composer:v2
