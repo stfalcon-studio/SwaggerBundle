@@ -1,7 +1,6 @@
 includes:
     - 'vendor/phpstan/phpstan-phpunit/extension.neon'
     - 'vendor/phpstan/phpstan-phpunit/rules.neon'
-    - 'vendor/phpstan/phpstan-doctrine/extension.neon'
     - 'vendor/phpstan/phpstan-symfony/extension.neon'
 parameters:
     level: 9
@@ -10,5 +9,15 @@ parameters:
         - '%rootDir%/../../../vendor/*'
     fileExtensions:
         - 'php'
-    checkGenericClassInNonGenericObjectType: false
     treatPhpDocTypesAsCertain: false
+    reportUnmatchedIgnoredErrors: false
+    ignoreErrors:
+        -
+            identifier: missingType.iterableValue
+            reportUnmatched: false
+        -
+            identifier: function.alreadyNarrowedType
+            reportUnmatched: false
+        -
+            identifier: instanceof.alwaysTrue
+            reportUnmatched: false

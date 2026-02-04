@@ -45,20 +45,20 @@ class ConfigParser
     /**
      * @param mixed[] $config
      *
-     * @throws UnexpectedValueException
-     *
      * @return mixed[]
+     *
+     * @throws UnexpectedValueException
      */
     private function iterate(array $config): array
     {
         foreach ($config as $key => $value) {
-            if (\is_string($value) && 0 === \strpos($value, '$')) {
-                $nestedPath = \substr($value, 1);
+            if (\is_string($value) && str_starts_with($value, '$')) {
+                $nestedPath = substr($value, 1);
                 $path = $this->configFolder.$nestedPath;
 
-                if (\is_dir($path)) {
+                if (is_dir($path)) {
                     $config[$key] = $this->parseDir($path);
-                } elseif (\is_file($path)) {
+                } elseif (is_file($path)) {
                     $config[$key] = $this->parseFile($path);
                 } else {
                     throw new \InvalidArgumentException(\sprintf('`%s` not exists', $path));
@@ -80,9 +80,9 @@ class ConfigParser
     /**
      * @param string $dirPath
      *
-     * @throws UnexpectedValueException
-     *
      * @return mixed[]
+     *
+     * @throws UnexpectedValueException
      */
     private function parseDir(string $dirPath): array
     {
@@ -102,7 +102,7 @@ class ConfigParser
                     throw new UnexpectedValueException();
                 }
 
-                $nestedDirs = \array_replace_recursive($nestedDirs, $replacements);
+                $nestedDirs = array_replace_recursive($nestedDirs, $replacements);
 
                 if (!\is_array($nestedDirs)) {
                     throw new \UnexpectedValueException('Expected array after parsing, NULL given');
@@ -116,9 +116,9 @@ class ConfigParser
     /**
      * @param string $filePath
      *
-     * @throws UnexpectedValueException
-     *
      * @return mixed[]
+     *
+     * @throws UnexpectedValueException
      */
     private function parseFile(string $filePath): array
     {

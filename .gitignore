@@ -1,9 +1,38 @@
+/vendor/
+.phpunit.result.cache
+composer.lock
+.phpcs-cache
+.php-cs-fixer.cache
+clover-coverage.xml
+
+###> PhpStrom Shared Project Settings ###
+.idea/*
+!.idea/SwaggerBundle.iml
+!.idea/icon.svg
+!.idea/inspectionProfiles
+!.idea/modules.xml
+!.idea/php-test-framework.xml
+!.idea/php.xml
+!.idea/phpunit.xml
+!.idea/runConfigurations
+###< PhpStrom Shared Project Settings ###
+
 ###> symfony/framework-bundle ###
-.phpunit.result
+/.env.local
+/.env.local.php
+/.env.*.local
+/config/secrets/prod/prod.decrypt.private.php
+/public/bundles/
+/var/
 /vendor/
 ###< symfony/framework-bundle ###
 
+###> friendsofphp/php-cs-fixer ###
+/.php-cs-fixer.php
+/.php-cs-fixer.cache
+###< friendsofphp/php-cs-fixer ###
+
 ###> phpunit/phpunit ###
 /phpunit.xml
-.phpunit.result.cache
+/.phpunit.cache/
 ###< phpunit/phpunit ###
