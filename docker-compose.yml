@@ -1,0 +1,11 @@
+services:
+  stfalcon_studio_swagger_bundle:
+    container_name: "stfalcon_studio_swagger_bundle"
+    image: fresh-stfalcon_studio_swagger_bundle-enum-bundle-php:1.0
+    stdin_open: true
+    tty: true
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - .:/var/www/bundle
