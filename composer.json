@@ -13,7 +13,6 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "symfony/console": "^8.0",
-        "symfony/flex": "^v2.10",
         "symfony/framework-bundle": "^8.0",
         "symfony/twig-bundle": "^8.0",
         "symfony/yaml": "^8.0",
