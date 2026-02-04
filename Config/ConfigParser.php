@@ -45,9 +45,9 @@ class ConfigParser
     /**
      * @param mixed[] $config
      *
-     * @return mixed[]
-     *
      * @throws UnexpectedValueException
+     *
+     * @return mixed[]
      */
     private function iterate(array $config): array
     {
@@ -80,9 +80,9 @@ class ConfigParser
     /**
      * @param string $dirPath
      *
-     * @return mixed[]
-     *
      * @throws UnexpectedValueException
+     *
+     * @return mixed[]
      */
     private function parseDir(string $dirPath): array
     {
@@ -116,9 +116,9 @@ class ConfigParser
     /**
      * @param string $filePath
      *
-     * @return mixed[]
-     *
      * @throws UnexpectedValueException
+     *
+     * @return mixed[]
      */
     private function parseFile(string $filePath): array
     {
